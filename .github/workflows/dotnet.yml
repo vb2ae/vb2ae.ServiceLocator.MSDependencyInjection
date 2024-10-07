@@ -9,8 +9,7 @@ on:
   pull_request:
     branches: [ "master" ]
 env:
-  servicelocator_sln : "src\\caliburn.micro.sln"
-  caliburn_features: "samples\\features\\features.sln"
+  servicelocator_sln : "vb2ae.ServiceLocator.MSDependencyInjection.sln"
   package_feed: "https://nuget.pkg.github.com/vb2ae/index.json"
   nuget_folder: "\\packages"
 
