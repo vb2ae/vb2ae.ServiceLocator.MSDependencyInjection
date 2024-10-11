@@ -8,6 +8,10 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+env:
+  servicelocator_sln : "vb2ae.ServiceLocator.MSDependencyInjection.sln"
+  package_feed: "https://nuget.pkg.github.com/vb2ae/index.json"
+  nuget_folder: "\\packages"
 
 jobs:
   build:
@@ -26,3 +30,9 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Pack Nuget
+      run: dotnet pack ${{env.servicelocator_sln}} --output ${{env.nuget_folder}}
+      
+    - name: publish Nuget Packages to GitHub
+      run: dotnet nuget publish ${{env.nuget_folder}} --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
+      if: github.event_name != 'pull_request'
