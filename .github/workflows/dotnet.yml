@@ -31,7 +31,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack Nuget
-      run: dotnet pack ${{env.servicelocator_sln}} /t:package /p:Configuration=Release
+      run: dotnet pack ${{env.servicelocator_sln}}  --Configuration Release --output ${{env.nuget_folder}}
       
     - name: publish Nuget Packages to GitHub
       run: dotnet nuget publish ${{env.nuget_folder}} --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
