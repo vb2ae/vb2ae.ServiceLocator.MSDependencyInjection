@@ -34,5 +34,5 @@ jobs:
       run: dotnet pack ${{env.servicelocator_sln}} --output ${{env.nuget_folder}}
       
     - name: publish Nuget Packages to GitHub
-      run: dotnet nuget publish ${{env.nuget_folder}} --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
+      run: dotnet nuget push ${{env.nuget_folder}}\*.nuget --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
       if: github.event_name != 'pull_request'
