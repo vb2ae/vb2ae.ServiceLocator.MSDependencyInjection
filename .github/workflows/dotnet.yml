@@ -34,5 +34,5 @@ jobs:
       run: dotnet pack ${{env.servicelocator_sln}} --output ${{env.nuget_folder}}
       
     - name: publish Nuget Packages to GitHub
-      run: dotnet nuget push ${{env.nuget_folder}}\\vb2ae.ServiceLocator.MSDependencyInjection.0.5.0.nupkg --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
+      run: dotnet nuget push vb2ae.ServiceLocator.MSDependencyInjection/vb2ae.ServiceLocator.MSDependencyInjection/packages/vb2ae.ServiceLocator.MSDependencyInjection.0.5.0.nupkg --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
       if: github.event_name != 'pull_request'
