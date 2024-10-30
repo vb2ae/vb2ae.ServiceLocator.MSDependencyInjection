@@ -1,6 +1,6 @@
 # vb2ae.ServiceLocator.MSDependencyInjection
 
-The purpose of this class library is to be able to use the Microsoft.Extensions.DependencyInjection with the common service locator.
+The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.
 
 
 ## example 
