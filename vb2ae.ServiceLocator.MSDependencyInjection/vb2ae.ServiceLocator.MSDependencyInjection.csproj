@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AnalysisLevel>latest-all</AnalysisLevel>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -11,6 +11,13 @@
     <PackageTags>common service locator</PackageTags>
     <AssemblyVersion>0.5.0</AssemblyVersion>
     <Version>0.5.0</Version>
+    <Title>CommonService Locator for MS.Dependency Injection</Title>
+    <PackageProjectUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</PackageProjectUrl>
+    <Copyright>2024</Copyright>
+    <Description>The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Ken Tucker</Authors>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
   </PropertyGroup>
 
   <ItemGroup>
