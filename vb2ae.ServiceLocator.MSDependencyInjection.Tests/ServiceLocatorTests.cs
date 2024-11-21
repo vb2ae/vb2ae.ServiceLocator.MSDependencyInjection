@@ -2,7 +2,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 {
     public class ServiceLocatorTests
     {
-
         [Fact]
         public void VerifyServiceLocatorCanLoadClass()
         {
