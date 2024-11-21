@@ -1,6 +1,12 @@
 # vb2ae.ServiceLocator.MSDependencyInjection
+[![.NET](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml)
+
+[![CodeQL](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql)
+
+[![Dependabot Updates](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates)
 
 The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.
+
 
 
 ## example 
