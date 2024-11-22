@@ -37,7 +37,7 @@ jobs:
         label: Unit Test Coverage
         color: brightgreen
         path: vb2ae.ServiceLocator.MSDependencyInjection.Tests/TestResults/coverage.opencover.xml
-        gist-filename: code-coverage.json
+        gist-filename: service-locator-code-coverage.json
         gist-id: 066c4effbbf4ea1ea1e62f172bde53fa
         gist-auth-token: ${{ secrets.GIST_AUTH_TOKEN }}       
     - name: Print code coverage
