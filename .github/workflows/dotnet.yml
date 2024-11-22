@@ -27,7 +27,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --configuration Release 
     - name: Test
       run: dotnet test ${{env.servicelocator_sln}} --configuration Release -p:CollectCoverage=true -p:CoverletOutput=TestResults/ -p:CoverletOutputFormat=opencover --no-build --verbosity normal
     - name: Create Test Coverage Badge
