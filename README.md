@@ -5,6 +5,8 @@
 
 [![Dependabot Updates](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates)
 
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/vb2ae/066c4effbbf4ea1ea1e62f172bde53fa/raw/service-locator-code-coverage.json)
+
 The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.
 
 

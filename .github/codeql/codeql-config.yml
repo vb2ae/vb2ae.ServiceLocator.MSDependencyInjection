@@ -1,0 +1,12 @@
+name: "Security and Quality"
+
+queries:
+  - name: Queries from security-extended, plus maintainability and reliability queries
+    uses: security-and-quality
+  - name: Queries from the default suite, plus lower severity and precision queries
+    uses: security-extended
+paths-ignore: 
+    # Ignore all files with the .Designer.cs extension (generated code)
+  - '*.Designer.cs'
+   # Ignore all files with the .generated.cs extension (generated code)
+  - '*.generated.cs'
