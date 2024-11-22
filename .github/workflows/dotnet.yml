@@ -36,9 +36,9 @@ jobs:
       with:
         label: Unit Test Coverage
         color: brightgreen
-        path: OpenWeatherMap.Standard.Core.Test/TestResults/coverage.opencover.xml
+        path: vb2ae.ServiceLocator.MSDependencyInjection.Tests/TestResults/coverage.opencover.xml
         gist-filename: code-coverage.json
-        gist-id: 05708cb0180d790434ef8a4b5499beb7
+        gist-id: 066c4effbbf4ea1ea1e62f172bde53fa
         gist-auth-token: ${{ secrets.GIST_AUTH_TOKEN }}       
     - name: Print code coverage
       run: echo "Code coverage percentage ${{steps.create_coverage_badge.outputs.percentage}}%"
