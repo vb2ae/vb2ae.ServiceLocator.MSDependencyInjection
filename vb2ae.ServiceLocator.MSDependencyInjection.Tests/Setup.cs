@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models;
 
 namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 {
@@ -23,8 +24,11 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
             _defaultBuilder.ConfigureServices((context, services) =>
             {
                 services.AddSingleton<IService, ServiceImpl>();
-                // where ServiceImpl implements IService
-                // ... add other services when needed
+                services.AddTransient<ICar, Ford>();
+                services.AddTransient<ICar, Toyota>();
+                services.AddTransient<ICar, Chevy>();
+                services.AddKeyedTransient<IPet, Dog>("Dog");
+                services.AddKeyedTransient<IPet, Cat>("Cat");
             });
 
             _services = _defaultBuilder.Build().Services;

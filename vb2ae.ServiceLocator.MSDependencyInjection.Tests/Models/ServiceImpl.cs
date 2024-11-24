@@ -1,10 +1,5 @@
-﻿namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
+﻿namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models
 {
-    public interface IService
-    {
-        void DoSomething();
-    }
-
     public class ServiceImpl : IService
     {
         public void DoSomething()
