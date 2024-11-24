@@ -5,9 +5,13 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  workflow_dispatch: # Allow running the workflow manually from the GitHub UI
   push:
     branches:
-      - main
+      - 'main'       # Run the workflow when pushing to the main branch
+  release:
+    types:
+      - published    # Run the workflow when a new GitHub release is published
 env:
   servicelocator_sln : "vb2ae.ServiceLocator.MSDependencyInjection.sln"
   package_feed: "https://api.nuget.org/v3/index.json"
