@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: deploy
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
