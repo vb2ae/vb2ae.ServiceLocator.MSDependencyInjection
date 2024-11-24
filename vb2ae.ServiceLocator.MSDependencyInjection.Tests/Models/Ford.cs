@@ -1,7 +1,7 @@
 ﻿namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models
 {
-    public interface ICar
+    public class Ford : ICar
     {
-        string Name { get; set; }
+        public string Name { get; set; } = "Ford";
     }
 }
