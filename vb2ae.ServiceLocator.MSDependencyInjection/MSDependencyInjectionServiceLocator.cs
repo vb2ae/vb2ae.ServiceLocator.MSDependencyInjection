@@ -16,12 +16,34 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
 
         public IEnumerable<object> GetAllInstances(Type serviceType)
         {
-            return _serviceProvider.GetServices(serviceType);
+            var allServices = new List<object>();
+            var services = _serviceProvider.GetServices(serviceType);
+            if (services != null)
+            {
+                allServices.AddRange(services);
+            }
+            var keyedServices = _serviceProvider.GetKeyedServices(serviceType, KeyedService.AnyKey);
+            if (keyedServices != null)
+            {
+                allServices.AddRange(keyedServices);
+            }
+            return allServices;
         }
 
         public IEnumerable<TService> GetAllInstances<TService>()
         {
-            return _serviceProvider.GetServices<TService>();
+            var allServices = new List<TService>();
+            var services = _serviceProvider.GetServices<TService>();
+            if (services != null)
+            {
+                allServices.AddRange(services);
+            }
+            var keyedServices = _serviceProvider.GetKeyedServices<TService>(KeyedService.AnyKey);
+            if (keyedServices != null)
+            {
+                allServices.AddRange(keyedServices);
+            }
+            return allServices;
         }
 
         public object GetInstance(Type serviceType)
@@ -33,7 +55,7 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
         {
             // Microsoft.Extensions.DependencyInjection does not support keyed services out of the box.
             // You might need to implement a custom logic or use a third-party library for this.
-            throw new NotSupportedException("Keyed services are not supported.");
+            return _serviceProvider.GetRequiredKeyedService(serviceType, key);
         }
 
         public TService GetInstance<TService>()
@@ -43,9 +65,7 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
 
         public TService GetInstance<TService>(string key)
         {
-            // Microsoft.Extensions.DependencyInjection does not support keyed services out of the box.
-            // You might need to implement a custom logic or use a third-party library for this.
-            throw new NotSupportedException("Keyed services are not supported.");
+            return _serviceProvider.GetKeyedService<TService>(key);
         }
 
         public T GetService<T>()
