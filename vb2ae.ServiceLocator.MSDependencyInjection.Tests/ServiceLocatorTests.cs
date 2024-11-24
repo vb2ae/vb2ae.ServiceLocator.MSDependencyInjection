@@ -15,7 +15,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         [Fact]
         public void GetAllInstances_Type_ReturnsInstances()
         {
-
             var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances(typeof(IService));
 
             Assert.Single(result);
