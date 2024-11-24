@@ -27,9 +27,9 @@ jobs:
         with:
           dotnet-version: 9.0.x
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ${{servicelocator_sln}}
       - name: Build
-        run: dotnet build --no-restore --configuration Release 
+        run: dotnet build  ${{servicelocator_sln}} --no-restore --configuration Release 
       - name: Pack Nuget
         run: dotnet pack ${{env.servicelocator_sln}} --output ${{env.nuget_folder}}
       
