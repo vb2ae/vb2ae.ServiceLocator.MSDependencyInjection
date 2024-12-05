@@ -50,3 +50,9 @@ jobs:
     - name: publish Nuget Packages to GitHub
       run: dotnet nuget push packages/*.nupkg --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_NUGET_PACKAGE}} --skip-duplicate
       if: github.event_name != 'pull_request'
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: published_nuget
+        path: packages/*.nupkg
