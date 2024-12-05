@@ -45,4 +45,4 @@ jobs:
   
       
       - name: publish Nuget Packages to GitHub
-        run: dotnet nuget push packages/*.nupkg --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_TO_NUGET}} --skip-duplicate
+        run: dotnet nuget push *.nupkg --source ${{env.package_feed}} --api-key ${{secrets.PUBLISH_TO_NUGET}} --skip-duplicate
