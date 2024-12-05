@@ -9,8 +9,8 @@
     <RepositoryUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>common service locator</PackageTags>
-    <AssemblyVersion>0.8.0</AssemblyVersion>
-    <Version>0.8.0</Version>
+    <AssemblyVersion>0.9.0</AssemblyVersion>
+    <Version>0.9.0</Version>
     <Title>CommonService Locator for MS.Dependency Injection</Title>
     <PackageProjectUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</PackageProjectUrl>
     <Copyright>2024</Copyright>
