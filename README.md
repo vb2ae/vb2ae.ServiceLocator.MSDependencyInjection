@@ -1,5 +1,6 @@
 # vb2ae.ServiceLocator.MSDependencyInjection
 [![.NET](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml)
+ [![CodeFactor](https://www.codefactor.io/repository/github/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/badge)](https://www.codefactor.io/repository/github/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection)
 
 [![CodeQL](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql)
 
