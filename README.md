@@ -7,6 +7,8 @@
 
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/vb2ae/066c4effbbf4ea1ea1e62f172bde53fa/raw/service-locator-code-coverage.json)
 
+[![NuGet Package](https://img.shields.io/nuget/v/vb2ae.ServiceLocator.MSDependencyInjection.svg?logo=nuget&logoColor=white&&style=for-the-badge&colorB=green)](https://www.nuget.org/packages/vb2ae.ServiceLocator.MSDependencyInjection)
+
 ## What is the common service locator?
 
 The Common Service Locator (CSL) library serves as a shared interface for service location, aimed at both application and framework developers. By providing an abstraction layer over IoC (Inversion of Control) containers and service locators, the CSL library allows applications to access these capabilities indirectly, without the need for hard references. This design ensures that third-party applications and frameworks can leverage IoC and service location features without being locked into a specific implementation. Ultimately, the goal is to promote flexibility and interoperability across various development ecosystems.
