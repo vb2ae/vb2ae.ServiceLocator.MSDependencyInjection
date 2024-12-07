@@ -1,11 +1,14 @@
 # vb2ae.ServiceLocator.MSDependencyInjection
 [![.NET](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dotnet.yml)
+ [![CodeFactor](https://www.codefactor.io/repository/github/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/badge)](https://www.codefactor.io/repository/github/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection)
 
 [![CodeQL](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/github-code-scanning/codeql)
 
 [![Dependabot Updates](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection/actions/workflows/dependabot/dependabot-updates)
 
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/vb2ae/066c4effbbf4ea1ea1e62f172bde53fa/raw/service-locator-code-coverage.json)
+
+[![NuGet Package](https://img.shields.io/nuget/v/vb2ae.ServiceLocator.MSDependencyInjection.svg?logo=nuget&logoColor=white&&style=for-the-badge&colorB=green)](https://www.nuget.org/packages/vb2ae.ServiceLocator.MSDependencyInjection)
 
 ## What is the common service locator?
 
