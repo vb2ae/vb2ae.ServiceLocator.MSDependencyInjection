@@ -62,6 +62,14 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
+        public void GetInstance_Type_WithNullKey()
+        {
+            var serviceType = typeof(IPet);
+
+            Assert.True(CommonServiceLocator.ServiceLocator.Current.GetInstance(serviceType, null) is IPet);
+        }
+
+        [Fact]
         public void GetInstance_Generic_ReturnsInstance()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IService>();
@@ -77,6 +85,19 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
             Assert.True(CommonServiceLocator.ServiceLocator.Current.GetInstance<IPet>(key) is Dog);
         }
 
+        [Fact]
+        public void GetInstance_Generic_WithNullKey()
+        {
+            var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IPet>(null);
+            Assert.True(result is IPet);
+        }
+
+        [Fact]
+        public void GetInstance_Generic_WithNullKey_NotRegisterClass()
+        {
+            var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IAmNotUsed>(null);
+            Assert.True(result is null);
+        }
         [Fact]
         public void GetService_Generic_ReturnsService()
         {
