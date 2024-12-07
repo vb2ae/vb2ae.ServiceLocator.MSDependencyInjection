@@ -1,37 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <AnalysisLevel>latest-all</AnalysisLevel>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>common service locator</PackageTags>
-    <AssemblyVersion>0.9.0</AssemblyVersion>
-    <Version>0.9.0</Version>
-    <Title>CommonService Locator for MS.Dependency Injection</Title>
-    <PackageProjectUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</PackageProjectUrl>
-    <Copyright>2024</Copyright>
-    <Description>The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.</Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Authors>Ken Tucker</Authors>
-    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>servicelocator.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>common service locator</PackageTags>
+		<AssemblyVersion>0.9.0</AssemblyVersion>
+		<Version>0.9.0</Version>
+		<Title>CommonService Locator for MS.Dependency Injection</Title>
+		<PackageProjectUrl>https://github.com/vb2ae/vb2ae.ServiceLocator.MSDependencyInjection</PackageProjectUrl>
+		<Copyright>2024</Copyright>
+		<Description>The purpose of this class library is to be able to use Microsoft.Extensions.DependencyInjection with the common service locator.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>Ken Tucker</Authors>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>servicelocator.snk</AssemblyOriginatorKeyFile>
+		<GenerateSBOM>true</GenerateSBOM>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommonServiceLocator" Version="2.0.7" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Sbom.Targets" Version="3.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>

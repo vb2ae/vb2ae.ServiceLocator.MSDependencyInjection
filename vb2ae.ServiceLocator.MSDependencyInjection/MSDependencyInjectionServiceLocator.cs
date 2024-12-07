@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace vb2ae.ServiceLocator.MSDependencyInjection
 {
@@ -53,8 +54,15 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
 
         public object GetInstance(Type serviceType, string key)
         {
-            // Microsoft.Extensions.DependencyInjection does not support keyed services out of the box.
-            // You might need to implement a custom logic or use a third-party library for this.
+            if (string.IsNullOrEmpty(key))
+            {
+                var services = GetAllInstances(serviceType);
+                if (services != null && services.Any())
+                {
+                    return services.First();
+                }
+                return null;
+            }
             return _serviceProvider.GetRequiredKeyedService(serviceType, key);
         }
 
@@ -65,6 +73,15 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
 
         public TService GetInstance<TService>(string key)
         {
+            if (string.IsNullOrEmpty(key))
+            {
+                var services = GetAllInstances<TService>();
+                if (services != null && services.Any())
+                {
+                    return services.First();
+                }
+                return default(TService);
+            }
             return _serviceProvider.GetKeyedService<TService>(key);
         }
 
