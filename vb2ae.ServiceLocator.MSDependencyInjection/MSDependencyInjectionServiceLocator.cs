@@ -57,9 +57,9 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
             if (string.IsNullOrEmpty(key))
             {
                 var services = GetAllInstances(serviceType);
-                if (services != null && services.Any())
+                if (services != null)
                 {
-                    return services.First();
+                    return services.FirstOrDefault();
                 }
                 return null;
             }
@@ -76,9 +76,9 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection
             if (string.IsNullOrEmpty(key))
             {
                 var services = GetAllInstances<TService>();
-                if (services != null && services.Any())
+                if (services != null)
                 {
-                    return services.First();
+                    return services.FirstOrDefault();
                 }
                 return default(TService);
             }

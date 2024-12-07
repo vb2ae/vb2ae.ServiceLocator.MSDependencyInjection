@@ -93,6 +93,12 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
+        public void GetInstance_Generic_WithNullKey_NotRegisterClass()
+        {
+            var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IAmNotUsed>(null);
+            Assert.True(result is null);
+        }
+        [Fact]
         public void GetService_Generic_ReturnsService()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetService<IService>();
