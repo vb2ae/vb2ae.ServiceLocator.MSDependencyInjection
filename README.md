@@ -61,7 +61,7 @@ The line of code below registers vb2ae.ServiceLocator.MSDependencyInjection with
 
 This returns a ServiceImpl
 
-# GetService< T >
+# GetService`<T>`
 
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IService>();
 
@@ -75,7 +75,7 @@ This returns a ServiceImpl
 
 This returns an instance of Cat
 
-# GetInstance< T >(key)
+# GetInstance`<T>`(key)
 
             var key = "Dog";
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IPet>(key);
@@ -89,7 +89,7 @@ This returns an instance of Dog
             
 This returns a ServiceImpl            
 
-# GetInstance< T >
+# GetInstance`<T>`
 
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IService>();
 
@@ -101,7 +101,7 @@ This returns a ServiceImpl
 
 Will return an IEnumerable<object> that contains a Cat and Dog
 
-# GetAllInstances< T >
+# GetAllInstances`<T>`
 
            var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances<ICar>()
 
