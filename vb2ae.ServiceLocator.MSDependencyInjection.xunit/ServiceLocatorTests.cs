@@ -1,17 +1,18 @@
 using Microsoft.Extensions.DependencyInjection;
-using vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models;
-using vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models.Orderers;
+using vb2ae.ServiceLocator.MSDependencyInjection.xunit.Models;
+
 namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 {
-    [TestCaseOrderer(typeof(PriorityOrderer))]
     public class MSDependencyInjectionServiceLocatorTests
     {
-        public MSDependencyInjectionServiceLocatorTests()
+        private readonly IServiceProvider _serviceProvider;
+
+        public MSDependencyInjectionServiceLocatorTests(IServiceProvider serviceProvider)
         {
+            _serviceProvider = serviceProvider;
         }
 
         [Fact]
-        [TestPriority(13)]
         public void GetAllInstances_Type_ReturnsInstances()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances(typeof(IService));
@@ -19,18 +20,13 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
             Assert.Single(result);
         }
         [Fact]
-        [TestPriority(1)]
         public void GetAllInstances_Type_ReturnsInstancesWhenKeyIsUsed()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances(typeof(IPet));
-            foreach (var item in result)
-            {
-                Console.WriteLine(item.GetType().Name);
-            }
+
             Assert.Equal(2, result.Count());
         }
         [Fact]
-        [TestPriority(2)]
         public void GetAllInstances_Generic_ReturnsInstances()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances<ICar>();
@@ -39,19 +35,14 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(3)]
         public void GetAllInstances_Generic_ReturnsInstancesWithKey()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetAllInstances<IPet>();
-            foreach (var item in result)
-            {
-                Console.WriteLine(item.GetType().Name);
-            }
+
             Assert.Equal(2, result.Count());
         }
 
         [Fact]
-        [TestPriority(4)]
         public void GetInstance_Type_ReturnsInstance()
         {
             var serviceType = typeof(IService);
@@ -62,7 +53,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(5)]
         public void GetInstance_Type_WithKey()
         {
             var serviceType = typeof(IPet);
@@ -72,7 +62,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(6)]
         public void GetInstance_Type_WithNullKey()
         {
             var serviceType = typeof(IPet);
@@ -81,7 +70,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(7)]
         public void GetInstance_Generic_ReturnsInstance()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IService>();
@@ -90,7 +78,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(8)]
         public void GetInstance_Generic_WithKey()
         {
             var key = "Dog";
@@ -99,7 +86,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(9)]
         public void GetInstance_Generic_WithNullKey()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IPet>(null);
@@ -107,14 +93,12 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(10)]
         public void GetInstance_Generic_WithNullKey_NotRegisterClass()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetInstance<IAmNotUsed>(null);
             Assert.True(result is null);
         }
         [Fact]
-        [TestPriority(11)]
         public void GetService_Generic_ReturnsService()
         {
             var result = CommonServiceLocator.ServiceLocator.Current.GetService<IService>();
@@ -123,7 +107,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         }
 
         [Fact]
-        [TestPriority(12)]
         public void GetService_Type_ReturnsService()
         {
             var serviceType = typeof(IService);
