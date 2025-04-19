@@ -18,7 +18,7 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         public async ValueTask StartAsync(IMessageSink diagnosticMessageSink)
         {
             Console.WriteLine("StartAsync");
-            Build();
+            _ = Build();
             await Task.CompletedTask; // This method is required by the interface but can be empty in this case.
         }
 
