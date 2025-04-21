@@ -1,26 +1,37 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using vb2ae.ServiceLocator.MSDependencyInjection.Tests.Models;
-
+using Xunit.Sdk;
+using Xunit.v3;
+[assembly: CaptureConsole]
+[assembly: TestPipelineStartup(typeof(vb2ae.ServiceLocator.MSDependencyInjection.Tests.Setup))]
 namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 {
-    public class Setup : Xunit.Di.Setup
+    public class Setup : ITestPipelineStartup
     {
-        private readonly IHostBuilder _defaultBuilder;
+        private readonly IHostBuilder _defaultBuilder = Host.CreateDefaultBuilder();
         private IServiceProvider _services;
-        private bool _built = false;
 
         public Setup()
         {
-            _defaultBuilder = Host.CreateDefaultBuilder();
-            _services = Build();
+            Console.WriteLine("Setup");
         }
+
+        public async ValueTask StartAsync(IMessageSink diagnosticMessageSink)
+        {
+            Console.WriteLine("StartAsync");
+            _services = Build();
+            await Task.CompletedTask; // This method is required by the interface but can be empty in this case.
+        }
+
+        public async ValueTask StopAsync()
+        {
+            await Task.CompletedTask; // This method is required by the interface but can be empty in this case.
+        }
+
         private IServiceProvider Build()
         {
-            if (_built)
-                throw new InvalidOperationException("Build can only be called once.");
-            _built = true;
-
+            Console.WriteLine("Adding Services to Dependency Injection.");
             _defaultBuilder.ConfigureServices((context, services) =>
             {
                 services.AddSingleton<IService, ServiceImpl>();
