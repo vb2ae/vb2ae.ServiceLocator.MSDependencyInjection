@@ -9,6 +9,8 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 {
     public class Setup : ITestPipelineStartup
     {
+        private readonly IHostBuilder _defaultBuilder = Host.CreateDefaultBuilder();
+        private IServiceProvider _services;
 
         public Setup()
         {
@@ -18,7 +20,7 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
         public async ValueTask StartAsync(IMessageSink diagnosticMessageSink)
         {
             Console.WriteLine("StartAsync");
-            _ = Build();
+            _services = Build();
             await Task.CompletedTask; // This method is required by the interface but can be empty in this case.
         }
 
@@ -29,8 +31,6 @@ namespace vb2ae.ServiceLocator.MSDependencyInjection.Tests
 
         private IServiceProvider Build()
         {
-            IHostBuilder _defaultBuilder = Host.CreateDefaultBuilder();
-            IServiceProvider _services;
             Console.WriteLine("Adding Services to Dependency Injection.");
             _defaultBuilder.ConfigureServices((context, services) =>
             {
